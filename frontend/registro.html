@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORVEX | Registro</title>
+    <link rel="stylesheet" href="/registro.css">
+</head>
+<body>
+
+    <main class="contenedor-registro">
+        <div class="logo">FOR<span>VEX</span></div>
+
+        <h1>CREAR CUENTA</h1>
+        <p>Únete a la comunidad competitiva FORVEX</p>
+
+        <form id="form-registro">
+
+            <label for="nombre">Nombre de jugador</label>
+            <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Tu nombre"
+                required
+            >
+
+            <label for="correo">Correo electrónico</label>
+            <input
+                type="email"
+                id="correo"
+                name="correo"
+                placeholder="ejemplo@correo.com"
+                required
+            >
+
+            <label for="password">Contraseña</label>
+            <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Mínimo 8 caracteres"
+                minlength="8"
+                required
+            >
+
+            <button type="submit">CREAR CUENTA</button>
+
+            <p id="mensaje-registro"></p>
+
+        </form>
+
+        <p class="enlace-login">
+            ¿Ya tienes cuenta?
+            <a href="/login">Inicia sesión</a>
+        </p>
+
+        <a class="volver" href="/">Volver al inicio</a>
+    </main>
+
+        <footer class="pie-pagina">
+        <div class="pie-contenido">
+
+            <h2>FOR<span>VEX</span></h2>
+
+            <p>La competencia comienza aquí.</p>
+
+            <div class="redes-sociales">
+                <a href="https://www.youtube.com/@forvex.23" target="_blank">YouTube</a>
+
+                <a href="https://www.tiktok.com/@forvex.23" target="_blank">TikTok</a>
+
+                <a href="https://www.facebook.com/forvex.23/" target="_blank">Facebook</a>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            <p>© 2026 FORVEX. Todos los derechos reservados.</p>
+            <p>Plataforma de torneos gamer.</p>
+        </div>
+    </footer>
+
+    <script src="/js/registro.js"></script>
+</body>
+</html>

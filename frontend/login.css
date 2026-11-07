@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+        linear-gradient(rgba(3, 8, 20, 0.94), rgba(3, 8, 20, 0.96)),
+        url("/imagenes/fondo-torneo.jpeg") center / cover no-repeat;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.contenedor-login {
+    width: 90%;
+    max-width: 430px;
+    padding: 40px 35px;
+    background: rgba(8, 17, 37, 0.96);
+    border: 1px solid #176bff;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(23, 107, 255, 0.25);
+}
+
+.logo {
+    text-align: center;
+    font-size: 38px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.logo span {
+    color: #176bff;
+}
+
+h1 {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.contenedor-login > p {
+    text-align: center;
+    color: #aebbd0;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+form input {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 20px;
+    border: 1px solid #263b5c;
+    border-radius: 7px;
+    background: #101d34;
+    color: white;
+    outline: none;
+}
+
+form input:focus {
+    border-color: #176bff;
+    box-shadow: 0 0 8px rgba(23, 107, 255, 0.35);
+}
+
+form button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 7px;
+    background: #176bff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background: #0052d6;
+}
+
+#mensaje-login {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.enlace-registro {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.enlace-registro a,
+.volver {
+    color: #3d8bff;
+    text-decoration: none;
+}
+
+.enlace-registro a:hover,
+.volver:hover {
+    text-decoration: underline;
+}
+
+.volver {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+
+/* PIE DE PAGINA FORVEX */
+
+.pie-pagina {
+    background: #0d1729;
+    border-top: 1px solid #1d3557;
+    margin-top: 100px;
+    padding: 40px 8% 20px;
+    text-align: center;
+}
+
+.pie-contenido h2 {
+    font-size: 27px;
+    letter-spacing: 2px;
+}
+
+.pie-contenido h2 span {
+    color: #168cff;
+}
+
+.pie-contenido p {
+    color: #91a4bf;
+    margin-top: 10px;
+}
+
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 25px 0;
+    flex-wrap: wrap;
+}
+
+.redes-sociales a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.redes-sociales a:hover {
+    color: #168cff;
+}
+
+.copyright {
+    border-top: 1px solid #263957;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.copyright p {
+    color: #71839d;
+    font-size: 12px;
+    margin: 6px 0;
+}

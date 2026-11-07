@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORVEX | Panel Admin</title>
+    <link rel="stylesheet" href="/admin.css">
+</head>
+<body>
+
+    <header>
+        <h1>FOR<span>VEX</span></h1>
+        <button id="cerrar-sesion">Cerrar sesión</button>
+    </header>
+
+    <main>
+        <h2>Panel de administración</h2>
+        <p>Bienvenido a FORVEX. Administra tus torneos.</p>
+
+        <section class="panel">
+            <h3>Crear nuevo torneo</h3>
+
+            <form id="form-torneo">
+                <input type="text" id="nombre" placeholder="Nombre del torneo" required>
+
+                <input type="text" id="juego" placeholder="Juego" required>
+
+                <input type="number" id="cupos" placeholder="Cantidad de cupos" min="1" required>
+
+                <input type="text" id="premios" placeholder="Premios" required>
+
+                <input type="date" id="fecha" required>
+
+                <textarea id="reglas" placeholder="Reglas del torneo"></textarea>
+
+                <input
+                    type="text"
+                    id="sala_id"
+                    placeholder="ID de la sala (opcional)"
+                >
+
+                <input
+                    type="text"
+                    id="sala_password"
+                    placeholder="Contraseña de la sala (opcional)"
+                >
+
+                <button type="submit">Crear torneo</button>
+            </form>
+        </section>
+
+        <section class="panel">
+            <h3>Mis torneos</h3>
+            <div id="lista-torneos">
+                <p>Aún no hay torneos publicados.</p>
+            </div>
+        </section>
+    </main>
+
+        <footer class="pie-pagina">
+        <div class="pie-contenido">
+
+            <h2>FOR<span>VEX</span></h2>
+
+            <p>La competencia comienza aquí.</p>
+
+            <div class="redes-sociales">
+                <a href="https://www.youtube.com/@forvex.23" target="_blank">YouTube</a>
+
+                <a href="https://www.tiktok.com/@forvex.23" target="_blank">TikTok</a>
+
+                <a href="https://www.facebook.com/forvex.23/" target="_blank">Facebook</a>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            <p>© 2026 FORVEX. Todos los derechos reservados.</p>
+            <p>Plataforma de torneos gamer.</p>
+        </div>
+    </footer>
+
+    <script src="/js/app.js"></script>
+
+</body>
+</html>

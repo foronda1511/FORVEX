@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080D19;
+    color: white;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 35px 20px;
+}
+
+header h1 {
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: 4px;
+}
+
+header h1 span {
+    color: #2585FF;
+}
+
+header p {
+    color: #8FA3C5;
+    font-size: 12px;
+    letter-spacing: 5px;
+    margin-top: 8px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 65vh;
+    padding: 20px;
+}
+
+.login {
+    background: #111C35;
+    border: 1px solid #263D65;
+    border-radius: 15px;
+    padding: 40px;
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    box-shadow: 0 0 30px #0D326455;
+}
+
+.login h2 {
+    color: #3B91FF;
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.login p {
+    color: #A8B8D0;
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+input {
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #30476B;
+    background: #080D19;
+    color: white;
+    outline: none;
+    font-size: 14px;
+}
+
+input:focus {
+    border-color: #2585FF;
+}
+
+button {
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background: #2585FF;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0865D8;
+    transform: translateY(-2px);
+}
+
+/* TARJETAS DE TORNEOS FORVEX */
+
+#lista-torneos-publicos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+    justify-content: center;
+    gap: 25px;
+    margin: 30px auto;
+    max-width: 1000px;
+}
+
+.tarjeta-torneo {
+    background-image:
+        linear-gradient(
+            rgba(5, 12, 28, 0.78),
+            rgba(5, 12, 28, 0.88)
+        ),
+        url("/imagenes/fondo-torneo.jpeg");
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 1px solid #176bff;
+    border-radius: 12px;
+    padding: 25px;
+    transition: 0.3s ease;
+    box-shadow: 0 0 12px rgba(23, 107, 255, 0.12);
+}
+
+.tarjeta-torneo:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 0 22px rgba(23, 107, 255, 0.4);
+    border-color: #4d91ff;
+}
+
+.torneo-etiqueta {
+    color: #3985ff;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.tarjeta-torneo h3 {
+    color: white;
+    font-size: 23px;
+    margin: 15px 0 8px;
+}
+
+.torneo-juego {
+    color: #3985ff;
+    font-weight: bold;
+}
+
+.torneo-datos {
+    margin-top: 20px;
+    display: grid;
+    gap: 12px;
+}
+
+.torneo-datos p {
+    color: #ddd;
+    line-height: 1.6;
+}
+
+.torneo-datos strong {
+    color: #3985ff;
+    font-size: 12px;
+}
+
+.tarjeta-torneo {
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+}
+
+/* NAVEGACIÓN PRINCIPAL FORVEX */
+
+header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+header nav a {
+    color: #DCE8FF;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 11px 20px;
+    border: 1px solid #263D65;
+    border-radius: 8px;
+    background: #111C35;
+    transition: 0.3s;
+}
+
+header nav a:hover {
+    color: white;
+    background: #176bff;
+    border-color: #176bff;
+    box-shadow: 0 0 15px #176bff66;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    header nav {
+        gap: 8px;
+    }
+
+    header nav a {
+        padding: 10px 13px;
+        font-size: 12px;
+    }
+}
+
+/* ORGANIZACIÓN DEL MENÚ DE USUARIO */
+
+header {
+    position: relative;
+}
+
+#estado-usuario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+}
+
+#estado-usuario span {
+    color: #DCE8FF;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#estado-usuario button {
+    padding: 11px 18px;
+    font-size: 12px;
+    background: #172640;
+    border: 1px solid #2585FF;
+}
+
+#estado-usuario button:hover {
+    background: #176bff;
+}
+
+#estado-usuario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.usuario-bienvenida span {
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.usuario-acciones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.usuario-acciones a {
+    text-decoration: none;
+    color: white;
+    background: #111C35;
+    border: 1px solid #2585FF;
+    border-radius: 8px;
+    padding: 11px 18px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.usuario-acciones a:hover {
+    background: #176bff;
+}
+
+.usuario-acciones button {
+    padding: 11px 18px;
+    font-size: 12px;
+}
+
+
+/* PIE DE PAGINA FORVEX */
+
+.pie-pagina {
+    background: #0d1729;
+    border-top: 1px solid #1d3557;
+    margin-top: 100px;
+    padding: 40px 8% 20px;
+    text-align: center;
+}
+
+.pie-contenido h2 {
+    font-size: 27px;
+    letter-spacing: 2px;
+}
+
+.pie-contenido h2 span {
+    color: #168cff;
+}
+
+.pie-contenido p {
+    color: #91a4bf;
+    margin-top: 10px;
+}
+
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 25px 0;
+    flex-wrap: wrap;
+}
+
+.redes-sociales a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.redes-sociales a:hover {
+    color: #168cff;
+}
+
+.copyright {
+    border-top: 1px solid #263957;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.copyright p {
+    color: #71839d;
+    font-size: 12px;
+    margin: 6px 0;
+}

@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080D19;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background: #111C35;
+    padding: 20px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 span {
+    color: #2585FF;
+}
+
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+main > p {
+    color: #A8B8D0;
+    margin: 10px 0 30px;
+}
+
+.panel {
+    background: #111C35;
+    border: 1px solid #263D65;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.panel h3 {
+    color: #3B91FF;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, textarea {
+    padding: 13px;
+    background: #080D19;
+    border: 1px solid #30476B;
+    border-radius: 7px;
+    color: white;
+}
+
+button {
+    background: #2585FF;
+    color: white;
+    padding: 13px 20px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #0865D8;
+}
+
+#cerrar-sesion {
+    background: #263D65;
+}
+
+
+/* PIE DE PAGINA FORVEX */
+
+.pie-pagina {
+    background: #0d1729;
+    border-top: 1px solid #1d3557;
+    margin-top: 100px;
+    padding: 40px 8% 20px;
+    text-align: center;
+}
+
+.pie-contenido h2 {
+    font-size: 27px;
+    letter-spacing: 2px;
+}
+
+.pie-contenido h2 span {
+    color: #168cff;
+}
+
+.pie-contenido p {
+    color: #91a4bf;
+    margin-top: 10px;
+}
+
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 25px 0;
+    flex-wrap: wrap;
+}
+
+.redes-sociales a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.redes-sociales a:hover {
+    color: #168cff;
+}
+
+.copyright {
+    border-top: 1px solid #263957;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.copyright p {
+    color: #71839d;
+    font-size: 12px;
+    margin: 6px 0;
+}

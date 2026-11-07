@@ -1,0 +1,183 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080d18;
+    color: white;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    background: #0d1729;
+    border-bottom: 1px solid #1d3557;
+}
+
+.encabezado h1 {
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
+.encabezado h1 span {
+    color: #168cff;
+}
+
+.encabezado a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    background: #126ee8;
+    padding: 12px 18px;
+    border-radius: 6px;
+}
+
+.contenedor-sala {
+    width: 90%;
+    max-width: 650px;
+    margin: 90px auto;
+    text-align: center;
+}
+
+.etiqueta {
+    display: inline-block;
+    background: #123c32;
+    color: #48e0a0;
+    padding: 9px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.contenedor-sala h2 {
+    font-size: 34px;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+}
+
+.descripcion {
+    color: #9aabc2;
+    margin-bottom: 35px;
+}
+
+.datos-sala {
+    background: #101d32;
+    border: 1px solid #1d3557;
+    border-radius: 14px;
+    padding: 30px;
+    text-align: left;
+}
+
+.dato {
+    margin-bottom: 25px;
+}
+
+.dato:last-child {
+    margin-bottom: 0;
+}
+
+.dato label {
+    display: block;
+    color: #8da7c8;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.dato-copiar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    background: #091426;
+    border: 1px solid #263f61;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 17px;
+    overflow-wrap: anywhere;
+}
+
+.dato-copiar button {
+    background: #147ce5;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.dato-copiar button:hover {
+    background: #3699ff;
+}
+
+#mensaje-sala {
+    margin-top: 20px;
+    color: #48e0a0;
+}
+
+
+
+/* PIE DE PAGINA FORVEX */
+
+.pie-pagina {
+    background: #0d1729;
+    border-top: 1px solid #1d3557;
+    margin-top: 100px;
+    padding: 40px 8% 20px;
+    text-align: center;
+}
+
+.pie-contenido h2 {
+    font-size: 27px;
+    letter-spacing: 2px;
+}
+
+.pie-contenido h2 span {
+    color: #168cff;
+}
+
+.pie-contenido p {
+    color: #91a4bf;
+    margin-top: 10px;
+}
+
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 25px 0;
+    flex-wrap: wrap;
+}
+
+.redes-sociales a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.redes-sociales a:hover {
+    color: #168cff;
+}
+
+.copyright {
+    border-top: 1px solid #263957;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.copyright p {
+    color: #71839d;
+    font-size: 12px;
+    margin: 6px 0;
+}
