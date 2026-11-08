@@ -1,21 +1,25 @@
-from flask import Flask, request, jsonify, send_from_directory, session
-from database import crear_tablas, conectar, crear_usuario
-from werkzeug.security import check_password_hash
-import os
-import sqlite3
 from flask import Flask, request, jsonify, send_from_directory, session, redirect
+from database import (
+    crear_tablas,
+    conectar,
+    crear_usuario,
+    crear_tabla_torneos,
+    crear_tabla_inscripciones
+)
+from werkzeug.security import check_password_hash
+from psycopg import IntegrityError
+import os
 
 app = Flask(__name__)
 
-app.secret_key = os.environ.get("FORVEX_SECRET_KEY", "cambia-esta-clave-secreta")
+app.secret_key = os.environ.get(
+    "FORVEX_SECRET_KEY",
+    "cambia-esta-clave-secreta"
+)
 
 crear_tablas()
-
-from database import crear_tabla_torneos
-from database import crear_tabla_inscripciones
-crear_tabla_inscripciones()
-
 crear_tabla_torneos()
+crear_tabla_inscripciones()
 
 @app.route("/")
 def inicio():
@@ -91,7 +95,7 @@ def login_admin():
     conexion = conectar()
 
     admin = conexion.execute(
-        "SELECT * FROM administradores WHERE correo = ?",
+        "SELECT * FROM administradores WHERE correo = %s",
         (correo,)
     ).fetchone()
 
@@ -149,7 +153,7 @@ def login_usuario():
 
     usuario = conexion.execute("""
         SELECT * FROM usuarios
-        WHERE correo = ?
+        WHERE correo =  %s
     """, (correo,)).fetchone()
 
     conexion.close()
@@ -211,11 +215,10 @@ def inscribir_jugador():
     conexion = conectar()
 
     try:
-        conexion.execute("BEGIN IMMEDIATE")
-
         torneo = conexion.execute("""
             SELECT * FROM torneos
-            WHERE id = ? AND estado = 'publicado'
+            WHERE id = %s AND estado = 'publicado'
+            FOR UPDATE
         """, (torneo_id,)).fetchone()
 
         if not torneo:
@@ -224,7 +227,7 @@ def inscribir_jugador():
         inscritos = conexion.execute("""
             SELECT COUNT(*) AS total
             FROM inscripciones
-            WHERE torneo_id = ?
+            WHERE torneo_id =  %s
         """, (torneo_id,)).fetchone()["total"]
 
         if inscritos >= torneo["cupos"]:
@@ -232,14 +235,14 @@ def inscribir_jugador():
 
         conexion.execute("""
             INSERT INTO inscripciones (usuario_id, torneo_id)
-            VALUES (?, ?)
+            VALUES ( %s, %s)
         """, (usuario_id, torneo_id))
 
         conexion.commit()
 
         return jsonify({"mensaje": "¡Te has inscrito correctamente!"}), 201
 
-    except sqlite3.IntegrityError:
+    except IntegrityError:
         conexion.rollback()
         return jsonify({"error": "Ya estás inscrito en este torneo"}), 409
 
@@ -259,7 +262,7 @@ def obtener_sala(torneo_id):
     inscripcion = conexion.execute("""
         SELECT id
         FROM inscripciones
-        WHERE usuario_id = ? AND torneo_id = ?
+        WHERE usuario_id =  %s AND torneo_id =  %s
     """, (usuario_id, torneo_id)).fetchone()
 
     if not inscripcion:
@@ -269,7 +272,7 @@ def obtener_sala(torneo_id):
     torneo = conexion.execute("""
         SELECT sala_id, sala_password
         FROM torneos
-        WHERE id = ?
+        WHERE id =  %s
     """, (torneo_id,)).fetchone()
 
     conexion.close()
@@ -293,7 +296,7 @@ def comprobar_inscripcion(torneo_id):
     inscripcion = conexion.execute("""
         SELECT id
         FROM inscripciones
-        WHERE usuario_id = ? AND torneo_id = ?
+        WHERE usuario_id =  %s AND torneo_id =  %s
     """, (session["usuario_id"], torneo_id)).fetchone()
 
     conexion.close()
@@ -353,7 +356,7 @@ def crear_torneo():
     conexion.execute("""
         INSERT INTO torneos
         (nombre, juego, cupos, premios, fecha, reglas, sala_id, sala_password)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        VALUES ( %s, %s, %s, %s, %s, %s, %s,  %s)
     """, (
         nombre, juego, cupos, premios, fecha, reglas,
         sala_id, sala_password
@@ -405,7 +408,7 @@ def publicar_torneo(id):
     resultado = conexion.execute("""
         UPDATE torneos
         SET estado = 'publicado'
-        WHERE id = ?
+        WHERE id =  %s
     """, (id,))
 
     conexion.commit()
@@ -426,12 +429,12 @@ def eliminar_torneo(id):
 
     conexion.execute("""
         DELETE FROM inscripciones
-        WHERE torneo_id = ?
+        WHERE torneo_id =  %s
     """, (id,))
 
     resultado = conexion.execute("""
         DELETE FROM torneos
-        WHERE id = ?
+        WHERE id =  %s
     """, (id,))
 
     conexion.commit()
